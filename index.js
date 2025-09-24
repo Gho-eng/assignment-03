@@ -13,12 +13,13 @@ app
 
 app.post('/signup',(req, res) => {
     const user = req.body;
-    const verify = (!user.fname || !user.lname || !user.username || !user.email ||!user.password || !user.repassword) === ''
+    const verify = (user.fname === '' ) || (user.lname === '' ) || (user.username === '' ) || (user.birthDate === '' ) 
+                                        || (user.email === '' ) || (user.password === '' );
     if (verify) {
         console.log('Missing credentials')
         res.json({ message: "Missing credentials"})
     } 
-    else if (user.password != user.repassword) {
+    else if (user.password !== user.repassword) {
         console.log('Passwords dont match')
         res.json({ message: "Passwords dont match"})
     }
