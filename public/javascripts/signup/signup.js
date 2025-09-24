@@ -10,6 +10,7 @@ const signupFn = () => {
       body: JSON.stringify({ 
         fName: $('#fName').value,
         lName: $('#lName').value,
+        birthDate: $('#birthDate').value,
         username: $('#username').value,
         email: $('#email').value,
         password: $('#password').value,
